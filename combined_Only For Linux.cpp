@@ -502,7 +502,7 @@ class ttt:public game{
 			}	
 		} 
 		void input(){
-		int a;
+		char a;
 		if(player=='X')
 			cout<<"Player 1 "<<p1_name<<"'s turn\n";
 		else if(player=='O')
@@ -510,23 +510,23 @@ class ttt:public game{
         abc:
 		cout<<"Select Region To Tick: ";
 			cin>>a;
-			if(a==1&&matrix[0][0]=='1')
+			if(a=='1'&&matrix[0][0]=='1')
 				matrix[0][0]=player;
-			else if(a==2&&matrix[0][1]=='2')
+			else if(a=='2'&&matrix[0][1]=='2')
 				matrix[0][1]=player;
-			else if(a==3&&matrix[0][2]=='3')
+			else if(a=='3'&&matrix[0][2]=='3')
 				matrix[0][2]=player;
-			else if(a==4&&matrix[1][0]=='4')
+			else if(a=='4'&&matrix[1][0]=='4')
 				matrix[1][0]=player;
-			else if(a==5&&matrix[1][1]=='5')
+			else if(a=='5'&&matrix[1][1]=='5')
 				matrix[1][1]=player;
-			else if(a==6&&matrix[1][2]=='6')
+			else if(a=='6'&&matrix[1][2]=='6')
 				matrix[1][2]=player;
-			else if(a==7&&matrix[2][0]=='7')
+			else if(a=='7'&&matrix[2][0]=='7')
 				matrix[2][0]=player;
-			else if(a==8&&matrix[2][1]=='8')
+			else if(a=='8'&&matrix[2][1]=='8')
 				matrix[2][1]=player;
-			else if(a==9&&matrix[2][2]=='9')
+			else if(a=='9'&&matrix[2][2]=='9')
 				matrix[2][2]=player;	
             else{
                 cout<<"You Cannot Mark on the same place twice! Again ";
