@@ -1,4 +1,4 @@
-# Holy-Trinity-Of-Epic_Games
+# Holy-Trinity-Of-Epic-Games
 This is a project that I did in our 2nd semester.
 # What does it do?
 2 people battle against each other in a best of 5 playing 3 games:
