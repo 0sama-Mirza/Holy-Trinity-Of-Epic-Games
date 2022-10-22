@@ -284,7 +284,7 @@ class snake:public position{
             if(kbhit()){//just kbhit for Linux
             //###Only For Linux
             
-                char op;
+                char op='p';
                 cin>>op;
                 switch (op){
             
@@ -505,26 +505,31 @@ class ttt:public game{
 			cout<<"Player 1 "<<p1_name<<"'s turn\n";
 		else if(player=='O')
 			cout<<"Player 2 "<<p2_name<<"'s turn\n";
+        abc:
 		cout<<"Select Region To Tick: ";
 			cin>>a;
-			if(a==1)
+			if(a==1&&matrix[0][0]=='1')
 				matrix[0][0]=player;
-			else if(a==2)
+			else if(a==2&&matrix[0][1]=='2')
 				matrix[0][1]=player;
-			else if(a==3)
+			else if(a==3&&matrix[0][2]=='3')
 				matrix[0][2]=player;
-			else if(a==4)
+			else if(a==4&&matrix[1][0]=='4')
 				matrix[1][0]=player;
-			else if(a==5)
+			else if(a==5&&matrix[1][1]=='5')
 				matrix[1][1]=player;
-			else if(a==6)
+			else if(a==6&&matrix[1][2]=='6')
 				matrix[1][2]=player;
-			else if(a==7)
+			else if(a==7&&matrix[2][0]=='7')
 				matrix[2][0]=player;
-			else if(a==8)
+			else if(a==8&&matrix[2][1]=='8')
 				matrix[2][1]=player;
-			else if(a==9)
+			else if(a==9&&matrix[2][2]=='9')
 				matrix[2][2]=player;	
+            else{
+                cout<<"You Cannot Mark on the same place twice! Again ";
+                goto abc;
+            }
 		}
         void logic(){
         	if(player=='X')
@@ -656,6 +661,7 @@ int main(){
 	int match=0;
 	int totalscore1=0;
 	int totalscore2=0;
+    int roundscore1=0,roundscore2=0;
     char op='y';
 	ttt t;
 	tap a;
@@ -665,8 +671,8 @@ int main(){
 	    cout<<"\n\n\nThis match will have 3 different games. You will begin by a small game of tick cross.\n";
 	    do{
 	    	cout<<"This match will not be over unless one of you wins more then 2 games then the other.\n";
-	    	cout<<"\nPlayer 1 "<<p1_name<<" Total Score: "<<totalscore1<<endl;
-	    	cout<<"Player 2 "<<p2_name<<" Total Score: "<<totalscore2<<endl;
+	    	cout<<"\nPlayer 1 "<<p1_name<<" Total Score: "<<roundscore1<<endl;
+	    	cout<<"Player 2 "<<p2_name<<" Total Score: "<<roundscore2<<endl;
 	    	cout<<"\t\t\t\tRound Number: "<<++match<<endl<<endl;
 	    t.play();
 	    string stop;
@@ -680,12 +686,17 @@ int main(){
         s.play();
         totalscore1=t.point1+a.point1+s.point1+totalscore1;
         totalscore2=t.point2+a.point2+s.point2+totalscore2;
+        if(totalscore1>totalscore2)
+            roundscore1++;
+        else
+            roundscore2++;
+        totalscore1=0;
+        totalscore2=0;
         s.reset();
         a.reset();
         t.reset();
-	    }
-	    while(totalscore1>totalscore2+2||totalscore2>totalscore1+2);
-	    if(totalscore1>totalscore2){
+	    }while(roundscore1!=3&&roundscore2!=3);
+	    if(roundscore1>roundscore2){
 	    	cout<<"Congrats!! Player 1 "<<p1_name<<" Wins The Match!!\nHere is your Reward"<<endl;
 	    	sleep(1);
 	    	cout<<"Absolutly Nothing :) You just wasted your time. Have a Nice Day.";
