@@ -1,5 +1,5 @@
 # Holy-Trinity-Of-Epic-Games
-This is a project that I did in our 2nd semester.
+This is a project that I did in my 2nd semester.
 # What does it do?
 2 people battle against each other in a best of 5 playing 3 games:
 1) Tick Cross
