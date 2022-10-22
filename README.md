@@ -5,6 +5,8 @@ This is a project that I did in our 2nd semester.
 1) Tick Cross
 2) Tap Tap!(Which is quite brutal)
 3) Snake game like Agar.io but on the terminal!
+
+
 There is no need to explain what tick cross does.
 # Tap Tap!
 Two people will battle each other by pressing one single button. The one who is faster will be victorious!
