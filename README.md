@@ -14,6 +14,10 @@ Note: On Linux You need to press Enter everytime you want to input anything. I f
 # Snake Game
 If you have played Agar.io you already know what kind of game this is. 2 Snakes battle against each other. Their Ultimate goal is to kill the other snake. You can kill the other by making the other snake's head touch your body or by becoming a bigger snake and eating the other from the head!
 The controls are:
+
+
 Player 1) w a s d
+
+
 Player 2) i j k l
 # If you want to improve the code feel free to do so.
