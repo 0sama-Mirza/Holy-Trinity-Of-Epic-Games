@@ -12,7 +12,7 @@ There is no need to explain what tick cross does.
 Two people will battle each other by pressing one single button. The one who is faster will be victorious!
 
 
-Note: On Linux You need to press Enter everytime you want to input anything. I figured out how to take input without pressing Enter on Windows but not on
+##Note: On Linux You need to press Enter everytime you want to input anything. I figured out how to take input without pressing Enter on Windows but not on
 Linux. If someone knows how to do it on linux please tell me :).
 # Snake Game
 If you have played Slither.io you already know what kind of game this is. 2 Snakes battle against each other. Their Ultimate goal is to kill the other snake. You can kill the other by making the other snake's head touch your body or by becoming a bigger snake and eating the other from the head!
