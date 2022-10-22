@@ -22,5 +22,5 @@ Player 1) w a s d
 
 
 Player 2) i j k l
-## Note: For Some reason when the game is reset player 2's snake starts to move upwards all on its own so beware. Press "k" to control it initially.
+## Note: For Some reason when the game is reset player 2's snake starts to move at the last direction at which it was moving all on its own so beware. Press "k" to control it initially.
 # If you want to improve the code feel free to do so.
