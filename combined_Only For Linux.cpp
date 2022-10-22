@@ -284,7 +284,7 @@ class snake:public position{
             if(kbhit()){//just kbhit for Linux
             //###Only For Linux
             
-                char op='p';
+                char op;
                 cin>>op;
                 switch (op){
             
@@ -355,6 +355,8 @@ class snake:public position{
                     return 0;
                 }
             }
+            gameOver=false;
+            return 0;
         }
         void display(){
             system("clear");//For Linux
@@ -541,75 +543,77 @@ class ttt:public game{
         	//first player
 			if (matrix[0][0] == 'X' && matrix[0][1] == 'X' && matrix[0][2] == 'X'){
 				gameover=1;
-				return 0;
+				return 1;
 			}
 			 if (matrix[1][0] == 'X' && matrix[1][1] == 'X' && matrix[1][2] == 'X'){
 				gameover=1;
-				return 0;
+				return 1;
 			}
 			if (matrix[2][0] == 'X' && matrix[2][1] == 'X' && matrix[2][2] == 'X'){
 				gameover=1;
-				return 0;
+				return 1;
 			}
 			 if (matrix[0][0] == 'X' && matrix[1][0] == 'X' && matrix[2][0] == 'X'){
 			 	gameover=1;
-				return 0;
+				return 1;
 			}
 			if (matrix[0][1] == 'X' && matrix[1][1] == 'X' && matrix[2][1] == 'X'){
 				gameover=1;
-				return 0;
+				return 1;
 			}
 			 if (matrix[0][2] == 'X' && matrix[1][2] == 'X' && matrix[2][2] == 'X'){
 			 	gameover=1;
-				return 0;
+				return 1;
 			}
 			 if (matrix[0][0] == 'X' && matrix[1][1] == 'X' && matrix[2][2] == 'X'){
 			 	gameover=1;
-				return 0;
+				return 1;
 				
 			}
 			 if (matrix[2][0] == 'X' && matrix[1][1] == 'X' && matrix[0][2] == 'X'){
 			 	gameover=1;
-				return 0;
+				return 1;
 			}
 			//second player
 			 if (matrix[0][0] == 'O' && matrix[0][1] == 'O' && matrix[0][2] == 'O'){
-			 	gameover=1;
+			 	gameover=2;
 				return 1;
 			}
 			 if (matrix[1][0] == 'O' && matrix[1][1] == 'O' && matrix[1][2] == 'O'){
-			 	gameover=1;
+			 	gameover=2;
 				return 1;
 			}
 			 if (matrix[2][0] == 'O' && matrix[2][1] == 'O' && matrix[2][2] == 'O'){
-			 	gameover=1;
+			 	gameover=2;
 				return 1;
 			}
 			 if (matrix[0][0] == 'O' && matrix[1][0] == 'O' && matrix[2][0] == 'O'){
-			 	gameover=1;
+			 	gameover=2;
 				return 1;
 			}
 			 if (matrix[0][1] == 'O' && matrix[1][1] == 'O' && matrix[2][1] == 'O'){
-			 	gameover=1;
+			 	gameover=2;
 				return 1;
 			}
 			 if (matrix[0][2] == 'O' && matrix[1][2] == 'O' && matrix[2][2] == 'O'){
-			 	gameover=1;
+			 	gameover=2;
 				return 1;
 			}
 			 if (matrix[0][0] == 'O' && matrix[1][1] == 'O' && matrix[2][2] == 'O'){
-			 	gameover=1;
+			 	gameover=2;
 				return 1;
 			}
 			 if (matrix[2][0] == 'O' && matrix[1][1] == 'O' && matrix[0][2] == 'O'){
-			 	gameover=1;
+			 	gameover=2;
 				return 1;
 			}
 			else if(matrix[0][0]!='1'&&matrix[0][1]!='2'&&matrix[0][2]!='3'&&matrix[1][0]!='4'&&matrix[1][1]!='5'&&matrix[1][2]!='6'&&matrix[2][0]!='7'&&matrix[2][1]!='8'&&matrix[2][2]!='9'){
-				gameover=2;
+				gameover=3;
+                return 0;
 			}
 			else
 				gameover=0;
+                return 0;
 		}  
         void save_score(){
 			fstream myfile;
@@ -634,22 +638,23 @@ class ttt:public game{
 				while (true){
 					input();
 					display();
-					if (win()&&gameover==1){
+					if (win()&&gameover==2){
 						cout <<"Player 2 "<<p2_name<<" wins!" << endl;
 						point2++;
 						winname=p2_name;
 						save_score();
 						break;
 					}
-					else if (!win()&&gameover==1){
+					else if (win()&&gameover==1){
 						cout <<"Player 1 "<<p1_name<<" wins!" << endl;
 						point1++;
 						winname=p1_name;
 						save_score();
 						break;
 					}
-					else if(gameover==2){
+					else if(gameover==3){
 						cout<<"Its a Draw!. Proceed to the next game.\n";
+                        break;
 					}
 					logic();
 				}	
@@ -683,6 +688,18 @@ int main(){
                 cin>>stop;
             }
         srand(time(NULL));
+        if(match>1){
+            cout<<endl<<"\t\tPlayer 2's Snake will move Upwards so beware!\n\t\tThe game is about to start.\n\t\t5"<<endl;
+            sleep(1);
+            cout<<"\t\t4"<<endl;
+            sleep(1);
+            cout<<"\t\t3"<<endl;
+            sleep(1);
+            cout<<"\t\t2"<<endl;
+            sleep(1);
+            cout<<"\t\t1"<<endl;
+            sleep(1);
+        }
         s.play();
         totalscore1=t.point1+a.point1+s.point1+totalscore1;
         totalscore2=t.point2+a.point2+s.point2+totalscore2;
