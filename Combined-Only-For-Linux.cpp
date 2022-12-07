@@ -444,6 +444,16 @@ class snake:public position{
 				}
 			}
         void play(){
+            cout<<endl<<"\t\tSnake Game:\n\t\tPlayer1 Controls: 'w' 'a' 's' 'd'\n\t\tPlayer2 Controls: 'i' 'j' 'k' 'l'\n\t\t5"<<endl;
+            sleep(1);
+            cout<<"\t\t4"<<endl;
+            sleep(1);
+            cout<<"\t\t3"<<endl;
+            sleep(1);
+            cout<<"\t\t2"<<endl;
+            sleep(1);
+            cout<<"\t\t1"<<endl;
+            sleep(1);
             while(!gameOver){
                 Input();
                 logic();
