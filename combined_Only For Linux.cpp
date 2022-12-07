@@ -220,6 +220,7 @@ class snake:public position{
                 TailY2[i]=0;
             }
             dir= STOP;
+	    dir2=STOP;  
             x1=(width-10)/4;
             y1=(height-10)/4;
             x2=(width-10)/2;
