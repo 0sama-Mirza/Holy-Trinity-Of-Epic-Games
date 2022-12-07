@@ -107,7 +107,7 @@ class tap:public position{
             cin>>con2;
             cout<<"As soon as someone presses a key the game will begin\n";
             cout<<"---------------------------------\n";
-	    cout<<endl<<"\t\tThe game is about to start Get Ready\n\t\tPlease dont destroy the keyboard!\n\t\t5"<<endl;
+            cout<<endl<<"\t\tThe game is about to start Get Ready\n\t\tPlease dont destroy the keyboard!\n\t\t5"<<endl;
             sleep(1);
             cout<<"\t\t4"<<endl;
             sleep(1);
@@ -121,13 +121,13 @@ class tap:public position{
         void logic(){
             display();
             while(x1<10&&x2<10){
-		// Set terminal to raw mode 
+                // Set terminal to raw mode 
                 system("stty raw"); 
                 // Wait for single character 
-                move = getchar();
-		// Reset terminal to normal "cooked" mode 
+                move = getchar(); 
+                // Reset terminal to normal "cooked" mode 
                 system("stty cooked");
-                cout<<endl;
+                cout<<endl; 
                 if(move==con1){
                     count1++;
                     x1++;
@@ -230,7 +230,7 @@ class snake:public position{
                 TailY2[i]=0;
             }
             dir= STOP;
-	    dir2=STOP;  
+            dir2= STOP;
             x1=(width-10)/4;
             y1=(height-10)/4;
             x2=(width-10)/2;
@@ -685,8 +685,8 @@ int main(){
 	int totalscore2=0;
     int roundscore1=0,roundscore2=0;
     char op='y';
-	ttt t;
-	tap a;
+	ttt TickCross;
+	tap TapTapGame;
 	snake s(30,20);
 	setname();
     do{
@@ -696,9 +696,9 @@ int main(){
 	    	cout<<"\nPlayer 1 "<<p1_name<<" Total Score: "<<roundscore1<<endl;
 	    	cout<<"Player 2 "<<p2_name<<" Total Score: "<<roundscore2<<endl;
 	    	cout<<"\t\t\t\tRound Number: "<<++match<<endl<<endl;
-	    t.play();
+        TickCross.play();
 	    string stop;
-        a.play();
+        TapTapGame.play();
         cout<<"-------------------------------------------------";
             while(stop!="0"){
                 cout<<"\nEnough!! To stop press the number 0: ";
@@ -706,8 +706,8 @@ int main(){
             }
         srand(time(NULL));
         s.play();
-        totalscore1=t.point1+a.point1+s.point1+totalscore1;
-        totalscore2=t.point2+a.point2+s.point2+totalscore2;
+        totalscore1=TickCross.point1+TapTapGame.point1+s.point1+totalscore1;
+        totalscore2=TickCross.point2+TapTapGame.point2+s.point2+totalscore2;
         if(totalscore1>totalscore2)
             roundscore1++;
         else
@@ -715,8 +715,8 @@ int main(){
         totalscore1=0;
         totalscore2=0;
         s.reset();
-        a.reset();
-        t.reset();
+        TapTapGame.reset();
+        TickCross.reset();
 	    }while(roundscore1!=3&&roundscore2!=3);
 	    if(roundscore1>roundscore2){
 	    	cout<<"Congrats!! Player 1 "<<p1_name<<" Wins The Match!!\nHere is your Reward"<<endl;
