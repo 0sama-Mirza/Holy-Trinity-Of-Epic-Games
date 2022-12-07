@@ -111,7 +111,13 @@ class tap:public position{
         void logic(){
             display();
             while(x1<10&&x2<10){
-                move=cin.get();
+		// Set terminal to raw mode 
+                system("stty raw"); 
+                // Wait for single character 
+                move = getchar();
+		// Reset terminal to normal "cooked" mode 
+                system("stty cooked");
+                cout<<endl;
                 if(move==con1){
                     count1++;
                     x1++;
