@@ -107,6 +107,7 @@ class tap:public position{
             cin>>con2;
             cout<<"As soon as someone presses a key the game will begin.\n\tPlease dont destroy the keyboard!\n";
             cout<<"---------------------------------\n";
+	}
         void logic(){
             display();
             while(x1<10&&x2<10){
