@@ -107,6 +107,16 @@ class tap:public position{
             cin>>con2;
             cout<<"As soon as someone presses a key the game will begin\n";
             cout<<"---------------------------------\n";
+	    cout<<endl<<"\t\tThe game is about to start Get Ready\n\t\tPlease dont destroy the keyboard!\n\t\t5"<<endl;
+            sleep(1);
+            cout<<"\t\t4"<<endl;
+            sleep(1);
+            cout<<"\t\t3"<<endl;
+            sleep(1);
+            cout<<"\t\t2"<<endl;
+            sleep(1);
+            cout<<"\t\t1"<<endl;
+            sleep(1);
         }
         void logic(){
             display();
@@ -695,18 +705,6 @@ int main(){
                 cin>>stop;
             }
         srand(time(NULL));
-        if(match>1){
-            cout<<endl<<"\t\tPlayer 2's Snake will move Upwards so beware!\n\t\tThe game is about to start.\n\t\t5"<<endl;
-            sleep(1);
-            cout<<"\t\t4"<<endl;
-            sleep(1);
-            cout<<"\t\t3"<<endl;
-            sleep(1);
-            cout<<"\t\t2"<<endl;
-            sleep(1);
-            cout<<"\t\t1"<<endl;
-            sleep(1);
-        }
         s.play();
         totalscore1=t.point1+a.point1+s.point1+totalscore1;
         totalscore2=t.point2+a.point2+s.point2+totalscore2;
