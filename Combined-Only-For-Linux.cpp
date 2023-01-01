@@ -105,9 +105,9 @@ class tap:public position{
             cin>>con1;
             cout<<"Player 2! Select Your Key: ";
             cin>>con2;
-            cout<<"As soon as someone presses a key the game will begin.\n\tPlease dont destroy the keyboard!\n";
+            cout<<"As soon as someone presses a key the game will begin\n";
             cout<<"---------------------------------\n";
-	}
+        }
         void logic(){
             display();
             while(x1<10&&x2<10){
@@ -687,7 +687,7 @@ int main(){
     char op='y';
 	ttt TickCross;
 	tap TapTapGame;
-	snake s(30,20);
+	snake s(40,20);
 	setname();
     do{
 	    cout<<"\n\n\nThis match will have 3 different games. You will begin by a small game of tick cross.\n";
