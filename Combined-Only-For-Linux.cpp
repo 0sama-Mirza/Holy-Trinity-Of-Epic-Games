@@ -171,7 +171,7 @@ class tap:public position{
             else{
                 cout<<"Player 1 "<<p1_name<<" Wins!"<<endl;
         		point1++;
-        		winname=p2_name;
+        		winname=p1_name;
         		save_score();
 			}
 			cout<<"\nPlayer 1 "<<p1_name<<"'s Total Taps: "<<count1;
