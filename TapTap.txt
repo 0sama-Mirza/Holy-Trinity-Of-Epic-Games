@@ -1,11 +1,11 @@
 		Tap Tap Battle Records!
 Player 1		Player 2
 Osama Score: 1		Harram Score: 0
-Harram Wins!
+Osama Wins!
 
 Osama Score: 1		Harram Score: 0
-Harram Wins!
+Osama Wins!
 
 Osama Score: 1		Harram Score: 0
-Harram Wins!
+Osama Wins!
 
