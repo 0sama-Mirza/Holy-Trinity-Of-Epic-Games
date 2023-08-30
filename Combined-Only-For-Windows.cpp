@@ -51,6 +51,8 @@ class game{
     public:
     	int point1;
         int point2;
+        game() : winname("Default"), count(0), point1(0), point2(0) {};
+        virtual ~game() {};  // Virtual destructor
         friend void setname();
         virtual void reset()=0;
         virtual void display()=0;  
@@ -66,8 +68,8 @@ class position:public game{
         int y1;
         int y2;
     public:
-        position(){x1=0;x2=0;y1=0;y2=0;}
-        ~position(){}
+        position() : x1(0), x2(0), y1(0), y2(0) {};  // Initialize members in constructor
+        ~position(){};
 };
 
 
@@ -98,7 +100,7 @@ class tap:public position{
 					myfile.close();	
 				}
 		}
-        tap(){count1=0;count2=0;x1=5;x2=5;point1=0;point2=0;count=0;}
+        tap() : count1(0), count2(0),con1('C'), con2('C'), move('M') {x1=5; x2=5;}
         void reset(){count1=0;count2=0;x1=5;x2=5;point1=0;point2=0;}
         void select_controls(){
             cout<<"---------------------------------";
@@ -198,34 +200,35 @@ class snake:public position{
         eDirection dir,dir2;
         vector<int>TailX1,TailY1,TailX2,TailY2;
     public:
-        snake(int w,int h){
+        snake(int w,int h)
+            : gameOver(false), 
+              width(w), 
+              height(h), 
+              fruitX(0), 
+              fruitY(0), 
+              score1(0), 
+              score2(0), 
+              dir(STOP), 
+              dir2(STOP), 
+              TailX1(static_cast<size_t>(w * h), 0),
+              TailY1(static_cast<size_t>(w * h), 0),
+              TailX2(static_cast<size_t>(w * h), 0),
+              TailY2(static_cast<size_t>(w * h), 0) {
             count=0;
-        	gameOver=false;
-            width=w;
-            height=h;
             point1=0;
             point2=0;
-            for(int i=0;i<width*height;i++){
-                TailX1.push_back(0);
-                TailY1.push_back(0);
-                TailX2.push_back(0);
-                TailY2.push_back(0);
-            }
-                dir= STOP;
-                x1=(width-10)/4;
-                y1=(height-10)/4;
-                x2=(width-10)/2;
-                y2=(height-10)/2;
-                fruitX=1+(rand()%(width-1));
-                fruitY=1+(rand()%(height-2));
-                score1=0;
-                score2=0;    
+            x1=(width-10)/4;
+            y1=(height-10)/4;
+            x2=(width-10)/2;
+            y2=(height-10)/2;
+            fruitX=1+(rand()%(width-1));
+            fruitY=1+(rand()%(height-2));
         }
         void reset(){
             gameOver=false;
             point1=0;
             point2=0;
-            for(int i=0;i<width*height;i++){
+            for(size_t i=0;i<static_cast<size_t>(width*height);i++){
                 TailX1[i]=0;
                 TailX2[i]=0;
                 TailY1[i]=0;
@@ -243,13 +246,13 @@ class snake:public position{
             score2=0;   
         }
         void logic(){
-            for(int i=score1;i>0;i--){
+            for(size_t i=static_cast<size_t>(score1);i>0;i--){
                 TailX1[i] = TailX1[i - 1];
                 TailY1[i] = TailY1[i - 1];
             }
             TailX1[0]=x1;
             TailY1[0]=y1;
-            for(int i=score2;i>0;i--){
+            for(size_t i=static_cast<size_t>(score2);i>0;i--){
                 TailX2[i]=TailX2[i - 1];
                 TailY2[i]=TailY2[i - 1];
             }
@@ -269,6 +272,10 @@ class snake:public position{
                 case DOWN:
                     y1++;
                     break;
+                case STOP:
+                    break;
+                default:
+                    break;
             }
         //#############Player 2's Logic################################
             switch(dir2){
@@ -283,6 +290,8 @@ class snake:public position{
                     break;
                 case DOWNN:
                     y2++;
+                    break;
+                case STOP:
                     break;
                 default:
                     break;
@@ -364,7 +373,7 @@ class snake:public position{
                     return 1;
                 }
             }
-            for(int i=score1;i>0;i--){
+            for(size_t i=static_cast<size_t>(score1);i>0;i--){
                 if(x1==TailX2[i]&&y1==TailY2[i]){
                     gameOver=true;
                     return 1;
@@ -401,13 +410,13 @@ class snake:public position{
                             }
                             else{
                                 bool print=false;
-                                for(int k=0;k<score1;k++){
+                                for(size_t k=0;k<static_cast<size_t>(score1);k++){
                                     if(TailX1[k]==spaces&&TailY1[k]==i){
                                         cout<<"o";
                                         print=true;
                                     }
                                 }
-                                for(int k=0;k<score2;k++){
+                                for(size_t k=0;k<static_cast<size_t>(score2);k++){
                                     if(TailX2[k]==spaces&&TailY2[k]==i){
                                         cout<<"*";
                                         print=true;
@@ -489,6 +498,20 @@ class ttt:public game{
     	char player;
     	int gameover;
     public:
+        ttt(): player('X'), gameover(0){
+    	    matrix[0][0]='1';
+    	    matrix[0][1]='2';
+		    matrix[0][2]='3';
+		    matrix[1][0]='4';
+    	    matrix[1][1]='5';
+    	    matrix[1][2]='6';
+    	    matrix[2][0]='7';
+		    matrix[2][1]='8';
+    	    matrix[2][2]='9';
+    	    point1=0;
+    	    point2=0;
+            count=0;
+		}
     	void reset(){	
 			matrix[0][0]='1';
     		matrix[0][1]='2';
@@ -502,21 +525,6 @@ class ttt:public game{
     		player='X';
     		point1=0;
     		point2=0;
-		}
-    	ttt(){
-    		matrix[0][0]='1';
-    		matrix[0][1]='2';
-			matrix[0][2]='3';
-			matrix[1][0]='4';
-    		matrix[1][1]='5';
-    		matrix[1][2]='6';
-    		matrix[2][0]='7';
-			matrix[2][1]='8';
-    		matrix[2][2]='9';
-    		player='X';
-    		point1=0;
-    		point2=0;
-            count=0;
 		}
 		void display(){
 			for(int i=0;i<3;i++){
@@ -716,7 +724,7 @@ int main(){
                 cout<<"\nEnough!! To stop press the number 0: ";
                 cin>>stop;
             }
-        srand(time(NULL));
+        srand(static_cast<unsigned int>(time(NULL)));
         s.play();
         totalscore1=TickCross.point1+TapTapGame.point1+s.point1+totalscore1;
         totalscore2=TickCross.point2+TapTapGame.point2+s.point2+totalscore2;
