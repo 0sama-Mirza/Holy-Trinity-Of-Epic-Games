@@ -1,5 +1,7 @@
 # Holy-Trinity-Of-Epic-Games
 This is a project that I did in my 2nd semester.
+# Please see different branches. 
++ This main branch has one .cpp file. Other branches are more cleaned up with seperated .cpp and .h files.
 # What does it do?
 2 people battle against each other in a best of 5 playing 3 games:
 1) Tick Cross
