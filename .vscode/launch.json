@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": false,
-      "cwd": "/home/baymax/Git-Projects/Holy-Trinity-Of-Epic-Games",
-      "program": "/home/baymax/Git-Projects/Holy-Trinity-Of-Epic-Games/build/Debug/outDebug",
+      "cwd": "/home/baymax/Git-Projects/Holy-Trinity-Of-Epic-Games/src",
+      "program": "/home/baymax/Git-Projects/Holy-Trinity-Of-Epic-Games/src/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
