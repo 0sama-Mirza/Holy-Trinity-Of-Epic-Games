@@ -1,5 +1,5 @@
-#include "/home/baymax/Git-Projects/Holy-Trinity-Of-Epic-Games/headers/tap.h"
-#include "/home/baymax/Git-Projects/Holy-Trinity-Of-Epic-Games/headers/globals.h"
+#include "../includes/tap.h"
+#include "../includes/globals.h"
 #include <iostream>
 
 tap::tap() : count1(0), count2(0), con1('C'), con2('C'), move('M') {

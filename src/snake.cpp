@@ -1,9 +1,9 @@
-#include "/home/baymax/Git-Projects/Holy-Trinity-Of-Epic-Games/headers/snake.h"
+#include "../includes/snake.h"
 #include <iostream>
 #include<fstream>
 #include <unistd.h> // For usleep (Linux)
 // #include <windows.h> // For Sleep (Windows)
-#include "/home/baymax/Git-Projects/Holy-Trinity-Of-Epic-Games/headers/kbhit.h"
+#include "../includes/kbhit.h"
 snake::snake(int w,int h)
             : gameOver(false), 
               width(w), 

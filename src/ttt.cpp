@@ -1,5 +1,5 @@
-#include "/home/baymax/Git-Projects/Holy-Trinity-Of-Epic-Games/headers/ttt.h"
-#include "/home/baymax/Git-Projects/Holy-Trinity-Of-Epic-Games/headers/globals.h"
+#include "../includes/ttt.h"
+#include "../includes/globals.h"
 #include <iostream>
 #include <fstream>
 ttt::ttt()

@@ -1,8 +1,8 @@
 #include <iostream>
-#include "/home/baymax/Git-Projects/Holy-Trinity-Of-Epic-Games/headers/game.h" // Include game.h
-#include "/home/baymax/Git-Projects/Holy-Trinity-Of-Epic-Games/headers/ttt.h"  // Include ttt.h
-#include "/home/baymax/Git-Projects/Holy-Trinity-Of-Epic-Games/headers/snake.h" // Include snake.h
-#include "/home/baymax/Git-Projects/Holy-Trinity-Of-Epic-Games/headers/tap.h" // Include tap.h
+#include "../includes/game.h" // Include game.h
+#include "../includes/ttt.h"  // Include ttt.h
+#include "../includes/snake.h" // Include snake.h
+#include "../includes/tap.h" // Include tap.h
 #include<unistd.h>//Sleep Function
 std::string p1_name = "Player1";
 std::string p2_name = "Player2";
