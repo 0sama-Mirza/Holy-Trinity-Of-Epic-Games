@@ -158,24 +158,18 @@ bool snake::win(){
                 return 0;
             }
             if(x1==x2&&y1==y2){
-                if(score1>score2){
-                    gameOver=true;
+		gameOver=true;
+                if(score1>score2)
                     return 0;
-                }
-                else{
-                    gameOver=true;
+                else
                     return 1;
-                }
             }
             for(size_t i=static_cast<size_t>(score1);i>0;i--){
-                if(x1==TailX2[i]&&y1==TailY2[i]){
-                    gameOver=true;
+		gameOver=true;
+                if(x1==TailX2[i]&&y1==TailY2[i])
                     return 1;
-                }
-                else if(x2==TailX1[i]&&y2==TailY1[i]){
-                    gameOver=true;
+                else if(x2==TailX1[i]&&y2==TailY1[i])
                     return 0;
-                }
             }
             gameOver=false;
             return 0;
