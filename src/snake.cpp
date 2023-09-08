@@ -175,7 +175,7 @@ bool snake::win(){
             return 0;
         }
 void snake::display(){
-			system("cls"); //For Windows
+	    system("cls"); //For Windows
             std::cout<<"\nFruit's Coordinates: ("<<fruitX<<","<<fruitY<<")\n";
             for(int i=0;i<height;i++){
                 if(i==0||i==height-1){
