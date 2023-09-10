@@ -1,7 +1,6 @@
 #include "../includes/snake.h"
 #include <iostream>
 #include<fstream>
-#include <unistd.h>
 #include<conio.h> //Get _kbhit wala 
 #include<time.h>//Random wala
 #include<windows.h> //Windows APIS
@@ -243,20 +242,20 @@ void snake::save_score(){
 			}
 void snake::play(){
             std::cout<<std::endl<<"\t\tSnake Game:\n\t\tPlayer1 Controls: 'w' 'a' 's' 'd'\n\t\tPlayer2 Controls: 'i' 'j' 'k' 'l'\n\t\t5"<<std::endl;
-            sleep(1);
+            Sleep(1);
             std::cout<<"\t\t4"<<std::endl;
-            sleep(1);
+            Sleep(1);
             std::cout<<"\t\t3"<<std::endl;
-            sleep(1);
+            Sleep(1);
             std::cout<<"\t\t2"<<std::endl;
-            sleep(1);
+            Sleep(1);
             std::cout<<"\t\t1"<<std::endl;
-            sleep(1);
+            Sleep(1);
             while(!gameOver){
                 Input();
                 logic();
                 display();
-				Sleep(15); //for Windows
+		Sleep(15); //for Windows
             }
             if(gameOver){
             	if(win()){
