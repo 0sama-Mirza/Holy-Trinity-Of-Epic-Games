@@ -3,7 +3,7 @@
 #include "../includes/ttt.h"  // Include ttt.h
 #include "../includes/snake.h" // Include snake.h
 #include "../includes/tap.h" // Include tap.h
-#include<unistd.h>//Sleep Function
+#include<windows.h>//Sleep Function
 std::string p1_name = "Player1";
 std::string p2_name = "Player2";
 int main(){
@@ -47,12 +47,12 @@ int main(){
 	    }while(roundscore1!=3&&roundscore2!=3);
 	    if(roundscore1>roundscore2){
 	    	std::cout<<"Congrats!! Player 1 "<<p1_name<<" Wins The Match!!\nHere is your Reward"<<std::endl;
-	    	sleep(1);
+	    	Sleep(1);
 	    	std::cout<<"Absolutly Nothing :) You just wasted your time. Have a Nice Day.";
 	    }
 	    else{
 	    	std::cout<<"Congrats!! Player 2 "<<p2_name<<" Wins THe Match!!\nHere is your Reward"<<std::endl;
-	    	sleep(1);
+	    	Sleep(1);
 	    	std::cout<<"Absolutly Nothing :) You just wasted your time. Have a Nice Day.";
         }
         std::cout<<"\nDo you want to Play Again?(Y/N): ";
