@@ -1,5 +1,4 @@
 #include <iostream>
-#include "../includes/game.h" // Include game.h
 #include "../includes/ttt.h"  // Include ttt.h
 #include "../includes/snake.h" // Include snake.h
 #include "../includes/tap.h" // Include tap.h
